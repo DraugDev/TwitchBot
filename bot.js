@@ -61,6 +61,15 @@ bot.addListener("connect", function(channel, message) {
     bot.say(settings.channels[0], "Im here Bitches!");
 });
 
+function adminCheck(name){
+  for(var i=0; i< settings.admins.length; i++){
+    if(admins[i] === name){
+      return true;
+    }
+  }
+  return false;
+}
+
 bot.addListener('message', function(from, to, text, message) {
   if(text === "!bot") {
     bot.say(to, "Hello! My name is Bot! Im your friend!");
